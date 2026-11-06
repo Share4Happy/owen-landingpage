@@ -1,0 +1,180 @@
+/**
+ * WORDPRESS REST API CONTINUOUS MARQUEE CAROUSEL
+ * Section 2B Specification
+ */
+
+.section-carousel {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.carousel-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.carousel-toggle-btn {
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.carousel-toggle-btn:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+/* Marquee Carousel Track */
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--space-6);
+  width: max-content;
+  will-change: transform;
+  animation: marquee var(--carousel-duration) linear infinite;
+}
+
+/* Pause conditions */
+.carousel-track:hover,
+.carousel-track:focus-within,
+.carousel-track.is-paused,
+.carousel-track.is-touching {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(-100% / 3), 0, 0);
+  }
+}
+
+/* Post Card Styling */
+.post-card {
+  width: 320px;
+  flex-shrink: 0;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform var(--transition-normal), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-border-light);
+  box-shadow: var(--shadow-card);
+}
+
+.post-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.post-card-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #242424;
+  overflow: hidden;
+}
+
+.post-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.post-card:hover .post-card-thumb img {
+  transform: scale(1.05);
+}
+
+.post-card-content {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.post-card-date {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.post-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+  margin-bottom: var(--space-3);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-excerpt {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: var(--space-4);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-cta {
+  margin-top: auto;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #93c5fd;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: color var(--transition-fast);
+}
+
+.post-card:hover .post-card-cta {
+  color: #ffffff;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-viewport {
+    mask-image: none;
+    -webkit-mask-image: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: var(--space-4);
+  }
+  .carousel-track {
+    animation: none !important;
+  }
+  .post-card {
+    scroll-snap-align: start;
+  }
+}

@@ -1,0 +1,6 @@
+# Robots.txt for Owen Landing Page
+User-agent: *
+Allow: /
+
+# Sitemap path (update with your live domain or GitHub Pages URL)
+Sitemap: https://username.github.io/owen/sitemap.xml
