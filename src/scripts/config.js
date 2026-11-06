@@ -9,7 +9,7 @@ export const CONFIG = {
   // WordPress REST API
   wpApi: {
     endpoint: import.meta.env.VITE_WP_API_URL || 'https://share4happy.com/wp-json/wp/v2/posts',
-    categoryId: Number(import.meta.env.VITE_WP_CATEGORY_ID) || 208,
+    categoryId: Number(import.meta.env.VITE_WP_CATEGORY_ID) || 221,
     perPage: Number(import.meta.env.VITE_WP_POSTS_PER_PAGE) || 5,
     get fullUrl() {
       return `${this.endpoint}?categories=${this.categoryId}&per_page=${this.perPage}&_embed`;

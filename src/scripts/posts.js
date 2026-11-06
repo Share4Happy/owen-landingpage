@@ -156,17 +156,19 @@ export async function initPostsCarousel(containerSelector = '#posts-carousel-con
 
   // Handle error or empty
   if (error || posts.length === 0) {
-    if (statusEl) {
-      statusEl.style.display = 'block';
-      statusEl.textContent = error
-        ? 'Tạm thời không thể tải bài viết mới nhất. Vui lòng quay lại sau.'
-        : 'Hiện chưa có bài viết mới.';
+    if (toggleBtn) toggleBtn.style.display = 'none';
+    if (track) {
+      track.style.animation = 'none';
+      track.style.width = '100%';
+      track.style.justifyContent = 'center';
+      track.innerHTML = `
+        <div class="carousel-empty-box" style="padding: 2.5rem 1.5rem; text-align: center; color: #a1a1aa; background: var(--color-bg-surface); border: 1px dashed var(--color-border-subtle); border-radius: var(--radius-lg); width: 100%; max-width: 640px; margin: 0 auto;">
+          <p style="font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem;">Chuyên mục bài viết đang được cập nhật</p>
+          <p style="font-size: 0.875rem; line-height: 1.6;">Các bài viết mới nhất từ chuyên mục Owen (ID: ${CONFIG.wpApi.categoryId}) sẽ tự động hiển thị dạng carousel tại đây ngay khi được xuất bản trên website.</p>
+        </div>
+      `;
     }
-    const section = container.closest('.section-carousel');
-    if (section && posts.length === 0) {
-      // Keep section friendly or hide if requested
-      console.info('[Owen WP API] Empty post state handled gracefully.');
-    }
+    console.info(`[Owen WP API] Category ${CONFIG.wpApi.categoryId} returned ${posts.length} posts. Empty state handled cleanly.`);
     return;
   }
 
