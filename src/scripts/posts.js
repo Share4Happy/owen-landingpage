@@ -215,3 +215,4 @@ export async function initPostsCarousel(containerSelector = '#posts-carousel-con
     }, { passive: true });
   }
 }
+

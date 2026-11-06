@@ -19,3 +19,4 @@ export const CONFIG = {
   // Lead Form
   formEndpoint: import.meta.env.VITE_FORM_ENDPOINT || '',
 };
+

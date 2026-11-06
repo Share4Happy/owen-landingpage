@@ -103,3 +103,4 @@ Dự án đã tích hợp sẵn workflow tự động hóa tại `.github/workfl
 - Tệp `public/robots.txt` và `public/sitemap.xml` đã được cấu hình chuẩn tĩnh.
 - Sau khi có tên miền chính thức, cập nhật thẻ `<link rel="canonical">` trong `index.html` và URL trong `public/sitemap.xml`.
 - Khai báo sitemap trên Google Search Console: `https://your-domain.com/sitemap.xml`.
+

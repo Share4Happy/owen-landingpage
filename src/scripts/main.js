@@ -86,3 +86,4 @@ function bindDynamicImages() {
     pantsChart.alt = IMAGES.charts.pants.alt;
   }
 }
+
