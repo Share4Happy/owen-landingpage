@@ -3,8 +3,8 @@
  */
 
 export const CONFIG = {
-  siteUrl: import.meta.env.VITE_SITE_URL || 'https://username.github.io/owen/',
-  basePath: import.meta.env.VITE_BASE_PATH || './',
+  siteUrl: import.meta.env.VITE_SITE_URL || 'https://owen.share4happy.com/',
+  basePath: import.meta.env.VITE_BASE_PATH || '/',
   
   // WordPress REST API
   wpApi: {
@@ -19,4 +19,3 @@ export const CONFIG = {
   // Lead Form
   formEndpoint: import.meta.env.VITE_FORM_ENDPOINT || '',
 };
-

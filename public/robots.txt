@@ -2,6 +2,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap path (update with your live domain or GitHub Pages URL)
-Sitemap: https://username.github.io/owen/sitemap.xml
-
+# Sitemap path
+Sitemap: https://owen.share4happy.com/sitemap.xml

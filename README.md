@@ -43,11 +43,11 @@ Server preview sẽ khởi chạy tại: `http://localhost:4173/`
 Tạo tệp `.env` dựa trên `.env.example`:
 
 ```env
-# URL trang web khi deploy
-VITE_SITE_URL=https://username.github.io/owen/
+# URL trang web chính thức
+VITE_SITE_URL=https://owen.share4happy.com/
 
-# Base path cho GitHub Pages ('./' cho portable, hoặc '/owen/' cho project repo)
-VITE_BASE_PATH=./
+# Base path cho tên miền riêng
+VITE_BASE_PATH=/
 
 # WordPress REST API cấu hình chuyên mục 208
 VITE_WP_API_URL=https://share4happy.com/wp-json/wp/v2/posts
@@ -92,15 +92,19 @@ Dự án đã tích hợp sẵn workflow tự động hóa tại `.github/workfl
 4. GitHub sẽ tự động kích hoạt workflow `Deploy Landing Page to GitHub Pages`.
 5. Sau khi workflow hoàn thành (khoảng 1 - 2 phút), URL trang web sẽ xuất hiện trên trang Settings > Pages.
 
-### Lưu ý quan trọng:
-- **Nếu thấy trang trắng sau khi deploy:** Kiểm tra lại cấu hình `base` trong `vite.config.js` hoặc biến môi trường `VITE_BASE_PATH`. Mặc định dự án đã để `./` giúp tương thích tự động với mọi dạng URL repository.
-- **Cache của GitHub Pages:** CDN GitHub Pages có thể lưu cache khoảng 5–10 phút sau mỗi lần deploy.
-- **Custom Domain:** Nếu bạn gắn tên miền riêng (ví dụ `owen.vn`), tạo tệp `public/CNAME` chứa domain của bạn và bật tính năng **Enforce HTTPS** trong GitHub Pages settings.
+### Cấu hình DNS cho tên miền `owen.share4happy.com`:
+1. Truy cập trang quản lý DNS của tên miền `share4happy.com` (Cloudflare / Namecheap / GoDaddy / PA Vietnam / v.v.).
+2. Thêm một bản ghi **CNAME**:
+   - **Type:** `CNAME`
+   - **Name (Host):** `owen`
+   - **Target (Value):** `<username>.github.io.` (thay `<username>` bằng tài khoản GitHub sở hữu repo của bạn, ví dụ `myname.github.io`).
+   - **Proxy status:** DNS only (hoặc Proxied nếu dùng Cloudflare SSL Full).
+3. Tệp `public/CNAME` đã được tạo sẵn trong dự án chứa `owen.share4happy.com`. Khi GitHub Actions deploy, GitHub Pages sẽ tự động kích hoạt tên miền này.
+4. Trong GitHub Repo: **Settings** $\rightarrow$ **Pages** $\rightarrow$ **Custom domain** $\rightarrow$ điền `owen.share4happy.com` $\rightarrow$ tích chọn **Enforce HTTPS**.
 
 ---
 
 ## 6. Xác minh Google Search Console & SEO
-- Tệp `public/robots.txt` và `public/sitemap.xml` đã được cấu hình chuẩn tĩnh.
-- Sau khi có tên miền chính thức, cập nhật thẻ `<link rel="canonical">` trong `index.html` và URL trong `public/sitemap.xml`.
-- Khai báo sitemap trên Google Search Console: `https://your-domain.com/sitemap.xml`.
+- Tệp `public/robots.txt` và `public/sitemap.xml` đã được cấu hình với domain `https://owen.share4happy.com/`.
+- Khai báo sitemap trên Google Search Console: `https://owen.share4happy.com/sitemap.xml`.
 
