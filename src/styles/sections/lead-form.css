@@ -1,95 +1,101 @@
 /**
  * LEAD CAPTURE FORM SECTION (MAIN CONVERSION GOAL)
- * Glassmorphism Card on Dual-Model Background
+ * Full uncropped dual-model background (không cắt ảnh, để ảnh full) + Glassmorphism Card
  */
 
 .section-lead-form {
+  padding: 0;
+  background-color: #121212;
   position: relative;
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  width: 100%;
 }
 
-/* Semi-dark overlay for better contrast */
-.section-lead-form::before {
-  content: "";
+/* Full container displaying the 1672x941 image without any cropping */
+.lead-full-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* The background photo of the 2 models: 100% full, no cropping */
+.lead-bg-full {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Overlay covering the full image */
+.lead-form-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  pointer-events: none;
-}
-
-.lead-form-container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: var(--space-4);
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .lead-eyebrow {
   display: block;
-  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-size: clamp(0.85rem, 1.6vw, 1.2rem);
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #ffffff;
-  margin-bottom: var(--space-6);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  margin-bottom: clamp(var(--space-2), 1.5vw, var(--space-5));
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* Glassmorphism Card */
+/* Frosted Glassmorphic Card centered between the two models */
 .lead-form-glass-card {
-  background: rgba(255, 255, 255, 0.14);
+  width: clamp(280px, 42vw, 460px);
+  background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  border-radius: 20px;
-  padding: var(--space-8) var(--space-7);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: clamp(14px, 2vw, 20px);
+  padding: clamp(0.75rem, 2vw, 1.75rem) clamp(0.85rem, 2.5vw, 2rem);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
   text-align: center;
 }
 
 .lead-form-title {
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.35rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: #ffffff;
-  margin-bottom: var(--space-2);
+  margin-bottom: clamp(0.2rem, 0.6vw, 0.4rem);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .lead-form-subtitle {
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 1.1vw, 0.85rem);
   color: #f1f5f9;
-  margin-bottom: var(--space-6);
-  line-height: 1.5;
+  margin-bottom: clamp(0.5rem, 1.5vw, 1.25rem);
+  line-height: 1.4;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .lead-form-fields {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  margin-bottom: var(--space-5);
+  gap: clamp(0.35rem, 1vw, 0.75rem);
+  margin-bottom: clamp(0.5rem, 1.2vw, 1rem);
 }
 
 .lead-pill-input {
   width: 100%;
   background-color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 9999px;
-  padding: 0.8rem 1.4rem;
-  font-size: 0.875rem;
+  padding: clamp(0.45rem, 1.2vw, 0.75rem) clamp(0.85rem, 2vw, 1.4rem);
+  font-size: clamp(0.75rem, 1.1vw, 0.875rem);
   color: #1e293b;
   outline: none;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -98,7 +104,7 @@
 
 .lead-pill-input::placeholder {
   color: #64748b;
-  font-size: 0.85rem;
+  font-size: clamp(0.7rem, 1vw, 0.825rem);
   letter-spacing: 0.02em;
 }
 
@@ -116,12 +122,12 @@
   background: rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 9999px;
   color: #ffffff;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
   font-weight: 700;
-  padding: 0.75rem 2.25rem;
+  padding: clamp(0.45rem, 1vw, 0.75rem) clamp(1.2rem, 2.5vw, 2.25rem);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -132,7 +138,7 @@
 }
 
 .lead-pill-btn:hover {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.38);
   border-color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
@@ -140,12 +146,12 @@
 
 .form-success-message {
   display: none;
-  background-color: rgba(16, 185, 129, 0.2);
+  background-color: rgba(16, 185, 129, 0.25);
   border: 1px solid #10b981;
   color: #ffffff;
-  padding: var(--space-4) var(--space-6);
+  padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-md);
-  margin-top: var(--space-4);
+  margin-top: var(--space-3);
   text-align: center;
   backdrop-filter: blur(8px);
 }
@@ -154,17 +160,27 @@
   display: block;
 }
 
-@media (max-width: 640px) {
-  .section-lead-form {
-    padding-top: var(--space-10);
-    padding-bottom: var(--space-10);
+/* Mobile responsive layout: keep full photo intact at top, glass card below without any cropping */
+@media (max-width: 639px) {
+  .lead-full-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .lead-form-overlay {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    padding: var(--space-4) var(--space-4) var(--space-8);
+    margin-top: -3.5rem;
+    z-index: 3;
+    background: transparent;
   }
   .lead-form-glass-card {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(20, 20, 20, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     padding: var(--space-6) var(--space-4);
-    margin: 0 var(--space-2);
-  }
-  .lead-pill-input {
-    padding: 0.75rem 1.2rem;
-    font-size: 0.8125rem;
   }
 }

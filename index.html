@@ -107,16 +107,16 @@
   <!-- Main Content Wrapper -->
   <main id="main-content">
     <!-- ========================================================= -->
-    <!-- 2. HERO BANNER SECTION                                    -->
+    <!-- 2. HERO BANNER SECTION (FULL BLEED / FILLS SCREEN WIDTH)  -->
     <!-- ========================================================= -->
     <section class="section section-hero" id="bo-suu-tap" aria-labelledby="hero-title">
-      <div class="container">
-        <!-- Visual Hero Banner Image with 2 Models and Brand Card -->
-        <div class="hero-banner-wrap">
-          <img id="hero-banner-img" class="hero-banner-img" src="./src/assets/images/hero/hero-banner.png" alt="Owen - Định hình phong cách công sở lịch lãm từng chi tiết - Mua ngay BST mới nhất" width="1057" height="448">
-        </div>
+      <!-- Full-bleed Banner Image spanning entire screen width -->
+      <div class="hero-banner-full">
+        <img id="hero-banner-img" class="hero-banner-img" src="./src/assets/images/hero/hero-banner.png" alt="Owen - Định hình phong cách công sở lịch lãm từng chi tiết - Mua ngay BST mới nhất" width="1057" height="448">
+      </div>
 
-        <!-- Hero Subtext -->
+      <!-- Hero Subtext (Left-aligned with container) -->
+      <div class="container">
         <div class="hero-subtext">
           <span class="eyebrow hero-eyebrow">DẤU ÁN PHONG CÁCH NAM</span>
           <p id="hero-title" class="hero-desc">
@@ -396,45 +396,51 @@
     </section>
 
     <!-- ========================================================= -->
-    <!-- 11. LEAD CAPTURE FORM (GLASSMORPHISM CARD ON MODELS BG)    -->
+    <!-- 11. LEAD CAPTURE FORM (FULL UNCROPPED PHOTO + GLASS CARD)  -->
     <!-- ========================================================= -->
     <section class="section section-lead-form" id="form-dang-ky" aria-labelledby="form-heading">
-      <div class="lead-form-container">
-        <span class="lead-eyebrow">OWEN STYLE GUIDE</span>
+      <div class="lead-full-wrapper">
+        <!-- Full Uncropped Dual-Model Image (không cắt ảnh, để ảnh full) -->
+        <img id="lead-bg-img" class="lead-bg-full" src="./src/assets/images/lead/form-bg-models.png" alt="Owen Style Guide - Bộ sưu tập công sở" width="1672" height="941">
 
-        <div class="lead-form-glass-card">
-          <h2 id="form-heading" class="lead-form-title">ĐĂNG KÝ NHẬN KHUYẾN MÃI</h2>
-          <p class="lead-form-subtitle">Đừng bỏ lỡ những ưu đãi hấp dẫn dành riêng cho bạn!</p>
+        <!-- Overlay Glassmorphism Form Card -->
+        <div class="lead-form-overlay">
+          <span class="lead-eyebrow">OWEN STYLE GUIDE</span>
 
-          <form id="lead-form" novalidate>
-            <div class="lead-form-fields">
-              <div class="form-group" style="margin-bottom: 0;">
-                <label for="lead-name" class="sr-only">Họ và tên</label>
-                <input type="text" id="lead-name" class="lead-pill-input" placeholder="Họ và tên" required autocomplete="name">
-                <p id="name-error" class="form-error" role="alert"></p>
+          <div class="lead-form-glass-card">
+            <h2 id="form-heading" class="lead-form-title">ĐĂNG KÝ NHẬN KHUYẾN MÃI</h2>
+            <p class="lead-form-subtitle">Đừng bỏ lỡ những ưu đãi hấp dẫn dành riêng cho bạn!</p>
+
+            <form id="lead-form" novalidate>
+              <div class="lead-form-fields">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="lead-name" class="sr-only">Họ và tên</label>
+                  <input type="text" id="lead-name" class="lead-pill-input" placeholder="Họ và tên" required autocomplete="name">
+                  <p id="name-error" class="form-error" role="alert"></p>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="lead-email" class="sr-only">Nhập email của bạn</label>
+                  <input type="email" id="lead-email" class="lead-pill-input" placeholder="Nhập email của bạn" autocomplete="email">
+                  <p id="email-error" class="form-error" role="alert"></p>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="lead-phone" class="sr-only">Số điện thoại</label>
+                  <input type="tel" id="lead-phone" class="lead-pill-input" placeholder="Số điện thoại" required autocomplete="tel">
+                  <p id="phone-error" class="form-error" role="alert"></p>
+                </div>
               </div>
 
-              <div class="form-group" style="margin-bottom: 0;">
-                <label for="lead-email" class="sr-only">Nhập email của bạn</label>
-                <input type="email" id="lead-email" class="lead-pill-input" placeholder="Nhập email của bạn" autocomplete="email">
-                <p id="email-error" class="form-error" role="alert"></p>
+              <button type="submit" class="lead-pill-btn">Đăng ký &rsaquo;</button>
+
+              <!-- Success Feedback -->
+              <div class="form-success-message" role="status" tabindex="-1">
+                <h3 class="form-success-title" style="font-size: 1rem; margin-bottom: 0.25rem;">Đăng ký thành công!</h3>
+                <p class="form-success-desc" style="font-size: 0.85rem; margin: 0;">Cảm ơn bạn đã quan tâm. Đội ngũ tư vấn Owen sẽ liên hệ sớm nhất để gửi ưu đãi đặc quyền cho bạn.</p>
               </div>
-
-              <div class="form-group" style="margin-bottom: 0;">
-                <label for="lead-phone" class="sr-only">Số điện thoại</label>
-                <input type="tel" id="lead-phone" class="lead-pill-input" placeholder="Số điện thoại" required autocomplete="tel">
-                <p id="phone-error" class="form-error" role="alert"></p>
-              </div>
-            </div>
-
-            <button type="submit" class="lead-pill-btn">Đăng ký &rsaquo;</button>
-
-            <!-- Success Feedback -->
-            <div class="form-success-message" role="status" tabindex="-1">
-              <h3 class="form-success-title" style="font-size: 1rem; margin-bottom: 0.25rem;">Đăng ký thành công!</h3>
-              <p class="form-success-desc" style="font-size: 0.85rem; margin: 0;">Cảm ơn bạn đã quan tâm. Đội ngũ tư vấn Owen sẽ liên hệ sớm nhất để gửi ưu đãi đặc quyền cho bạn.</p>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </section>

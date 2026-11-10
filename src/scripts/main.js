@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function bindDynamicImages() {
-  // Hero Banner image
+  // Hero Banner image (full bleed)
   const heroBanner = document.querySelector('#hero-banner-img');
   if (heroBanner && IMAGES.hero.banner) {
     heroBanner.src = IMAGES.hero.banner.src;
@@ -86,9 +86,10 @@ function bindDynamicImages() {
     pantsChart.alt = IMAGES.charts.pants.alt;
   }
 
-  // Lead Form background
-  const leadSection = document.querySelector('#form-dang-ky');
-  if (leadSection && IMAGES.lead.background) {
-    leadSection.style.backgroundImage = `url("${IMAGES.lead.background.src}")`;
+  // Lead Form full uncropped background image (không cắt ảnh, để ảnh full)
+  const leadBgImg = document.querySelector('#lead-bg-img');
+  if (leadBgImg && IMAGES.lead.background) {
+    leadBgImg.src = IMAGES.lead.background.src;
+    leadBgImg.alt = IMAGES.lead.background.alt;
   }
 }
