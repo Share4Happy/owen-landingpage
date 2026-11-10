@@ -1,5 +1,5 @@
 /**
- * Central Image & Asset Registry
+ * Central Image & Asset Registry - Owen
  * Vite resolves these imports to hashed production URLs automatically.
  */
 
@@ -8,8 +8,14 @@ import iconComfort from '../assets/icons/icon-comfort.svg';
 import iconNeat from '../assets/icons/icon-neat.svg';
 import iconMatch from '../assets/icons/icon-match.svg';
 
-// Hero Showcase
+// Hero Banner (New composite banner with 2 models and navy gold card)
+import heroBanner from '../assets/images/hero/hero-banner.png';
 import heroShirt from '../assets/images/hero/hero-shirt-display.jpg';
+
+// Outfits Check
+import outfitBlackGrey from '../assets/images/outfits/outfit-black-grey.png';
+import outfitBlueGrey from '../assets/images/outfits/outfit-blue-grey.png';
+import outfitGreenBlack from '../assets/images/outfits/outfit-green-black.png';
 
 // Shirts Collection
 import shirtBlue from '../assets/images/products/shirt-blue-long.jpg';
@@ -21,9 +27,12 @@ import pantsBlack from '../assets/images/products/pants-black.png';
 import pantsBeige from '../assets/images/products/pants-beige.png';
 import pantsCharcoal from '../assets/images/products/pants-charcoal.png';
 
-// High-Resolution Size Charts (Replaced with sharp originals)
+// High-Resolution Size Charts
 import chartShirts from '../assets/images/charts/size-chart-shirts.png';
 import chartPants from '../assets/images/charts/size-chart-pants.png';
+
+// Lead Form Background
+import leadBg from '../assets/images/lead/form-bg-models.png';
 
 export const IMAGES = {
   icons: {
@@ -32,8 +41,14 @@ export const IMAGES = {
     match: { src: iconMatch, alt: 'Dễ phối' },
   },
   hero: {
+    banner: { src: heroBanner, alt: 'Owen - Định hình phong cách công sở lịch lãm từng chi tiết' },
     shirt: { src: heroShirt, alt: 'Áo sơ mi trắng Owen Regular Fit lịch lãm' },
   },
+  outfits: [
+    { id: 'outfit-1', label: 'Áo Đen + Quần Xám', src: outfitBlackGrey, alt: 'Gợi ý phối đồ Owen: Áo Đen + Quần Xám' },
+    { id: 'outfit-2', label: 'Áo Xanh + Quần Xám', src: outfitBlueGrey, alt: 'Gợi ý phối đồ Owen: Áo Xanh + Quần Xám' },
+    { id: 'outfit-3', label: 'Áo Xanh + Quần Đen', src: outfitGreenBlack, alt: 'Gợi ý phối đồ Owen: Áo Xanh + Quần Đen' },
+  ],
   shirts: [
     { id: 'shirt-blue', name: 'Áo sơ mi dài tay xanh pastel', src: shirtBlue, alt: 'Áo sơ mi nam Owen dài tay màu xanh pastel nhẹ nhàng' },
     { id: 'shirt-navy', name: 'Áo sơ mi ngắn tay xanh navy', src: shirtNavy, alt: 'Áo sơ mi nam Owen ngắn tay màu xanh navy hiện đại' },
@@ -45,8 +60,11 @@ export const IMAGES = {
     { id: 'pants-charcoal', name: 'Quần tây co giãn xám than', src: pantsCharcoal, alt: 'Quần tây nam Owen co giãn màu xám than sang trọng' },
   ],
   charts: {
-    shirts: { src: chartShirts, alt: 'Bảng thông số chọn size áo nam Owen (độ nét cao)' },
-    pants: { src: chartPants, alt: 'Bảng thông số chọn size quần nam Owen (độ nét cao)' },
+    shirts: { src: chartShirts, alt: 'Bảng thông số chọn size áo nam Owen' },
+    pants: { src: chartPants, alt: 'Bảng thông số chọn size quần nam Owen' },
+  },
+  lead: {
+    background: { src: leadBg, alt: 'Bộ sưu tập công sở Owen phong cách quý ông' },
   },
   fallbackPost: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=600&q=80',
 };

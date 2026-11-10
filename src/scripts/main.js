@@ -7,13 +7,14 @@ import '../styles/base.css';
 import '../styles/components.css';
 import '../styles/sections/header.css';
 import '../styles/sections/hero.css';
+import '../styles/sections/outfits.css';
 import '../styles/sections/values.css';
 import '../styles/sections/products.css';
-import '../styles/sections/social-proof.css';
 import '../styles/sections/services.css';
 import '../styles/sections/faq-sizes.css';
-import '../styles/sections/carousel.css';
+import '../styles/sections/social-proof.css';
 import '../styles/sections/lead-form.css';
+import '../styles/sections/carousel.css';
 import '../styles/sections/footer.css';
 
 import { IMAGES } from './images.js';
@@ -34,26 +35,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // 4. Bind images dynamically according to IMAGES registry
   bindDynamicImages();
 
-  console.info('Owen Landing Page initialized successfully.');
+  console.info('Owen Landing Page initialized successfully with new 2026 design.');
 });
 
 function bindDynamicImages() {
-  // Hero shirt image
-  const heroImg = document.querySelector('#hero-display-img');
-  if (heroImg && IMAGES.hero.shirt) {
-    heroImg.src = IMAGES.hero.shirt.src;
-    heroImg.alt = IMAGES.hero.shirt.alt;
+  // Hero Banner image
+  const heroBanner = document.querySelector('#hero-banner-img');
+  if (heroBanner && IMAGES.hero.banner) {
+    heroBanner.src = IMAGES.hero.banner.src;
+    heroBanner.alt = IMAGES.hero.banner.alt;
   }
 
-  // Icons in hero
-  const iconComfort = document.querySelector('#icon-comfort-img');
-  if (iconComfort && IMAGES.icons.comfort) iconComfort.src = IMAGES.icons.comfort.src;
-
-  const iconNeat = document.querySelector('#icon-neat-img');
-  if (iconNeat && IMAGES.icons.neat) iconNeat.src = IMAGES.icons.neat.src;
-
-  const iconMatch = document.querySelector('#icon-match-img');
-  if (iconMatch && IMAGES.icons.match) iconMatch.src = IMAGES.icons.match.src;
+  // Outfits
+  IMAGES.outfits.forEach(outfit => {
+    const el = document.querySelector(`#img-${outfit.id}`);
+    if (el) {
+      el.src = outfit.src;
+      el.alt = outfit.alt;
+    }
+  });
 
   // Shirts collection
   IMAGES.shirts.forEach(item => {
@@ -85,5 +85,10 @@ function bindDynamicImages() {
     pantsChart.src = IMAGES.charts.pants.src;
     pantsChart.alt = IMAGES.charts.pants.alt;
   }
-}
 
+  // Lead Form background
+  const leadSection = document.querySelector('#form-dang-ky');
+  if (leadSection && IMAGES.lead.background) {
+    leadSection.style.backgroundImage = `url("${IMAGES.lead.background.src}")`;
+  }
+}

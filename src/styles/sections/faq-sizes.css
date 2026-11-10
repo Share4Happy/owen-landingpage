@@ -1,22 +1,64 @@
 /**
- * FAQ & SIZE CHARTS SECTION
+ * SIZE GUIDE & FAQ SECTIONS
+ * Standalone Size Guide + Full Width FAQ
  */
 
-.faq-sizes-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-10);
-  align-items: start;
+/* ========================================================= */
+/* SIZE GUIDE SECTION                                        */
+/* ========================================================= */
+.section-size-guide {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-12);
+  background-color: #121212;
 }
 
-/* FAQ Column */
-.faq-col {
+.size-guide-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.size-guide-title {
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.size-guide-stack {
   display: flex;
   flex-direction: column;
+  gap: var(--space-6);
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.size-chart-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.size-chart-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ========================================================= */
+/* FULL-WIDTH FAQ SECTION                                    */
+/* ========================================================= */
+.section-faq {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-12);
+  background-color: #121212;
 }
 
 .faq-header {
-  font-size: var(--font-size-xl);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -28,10 +70,11 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  max-width: 900px;
 }
 
 .faq-item {
-  border-bottom: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid #222222;
   padding-bottom: var(--space-6);
 }
 
@@ -40,7 +83,7 @@
 }
 
 .faq-question {
-  font-size: var(--font-size-base);
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -49,37 +92,8 @@
 }
 
 .faq-answer {
-  font-size: var(--font-size-sm);
+  font-size: 0.875rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
+  margin: 0;
 }
-
-/* Sizes Column */
-.sizes-col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-}
-
-.size-chart-card {
-  background-color: #ffffff;
-  border-radius: var(--radius-lg);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-card);
-  overflow: hidden;
-}
-
-.size-chart-img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-md);
-  object-fit: contain;
-}
-
-@media (max-width: 868px) {
-  .faq-sizes-layout {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-}
-

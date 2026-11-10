@@ -1,0 +1,104 @@
+/**
+ * OUTFITS CHECK SECTION
+ * Gợi ý phối đồ & Outfit Check
+ */
+
+.section-outfits {
+  padding-top: var(--space-12);
+  padding-bottom: 0;
+  background-color: #121212;
+}
+
+.outfits-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.outfits-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.outfits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-12);
+}
+
+.outfit-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform var(--transition-normal);
+}
+
+.outfit-card:hover {
+  transform: translateY(-4px);
+}
+
+.outfit-image-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4.15;
+  background-color: #ffffff;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.outfit-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform var(--transition-normal);
+}
+
+.outfit-card:hover .outfit-image-wrap img {
+  transform: scale(1.03);
+}
+
+.outfit-label {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Transition banner under outfits */
+.outfits-transition-bar {
+  background-color: #0a0a0a;
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  width: 100%;
+}
+
+.outfits-transition-text {
+  font-size: clamp(0.85rem, 1.6vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .outfits-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    gap: var(--space-8);
+  }
+}
+

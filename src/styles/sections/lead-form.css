@@ -1,77 +1,170 @@
 /**
  * LEAD CAPTURE FORM SECTION (MAIN CONVERSION GOAL)
+ * Glassmorphism Card on Dual-Model Background
  */
 
 .section-lead-form {
-  background: radial-gradient(circle at 50% 50%, #1e1e1e 0%, #121212 80%);
+  position: relative;
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lead-form-card {
-  max-width: 600px;
+/* Semi-dark overlay for better contrast */
+.section-lead-form::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.lead-form-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--color-bg-surface);
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-lg);
-  padding: var(--space-10) var(--space-8);
-  box-shadow: var(--shadow-card);
+  text-align: center;
+}
+
+.lead-eyebrow {
+  display: block;
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: var(--space-6);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Glassmorphism Card */
+.lead-form-glass-card {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 20px;
+  padding: var(--space-8) var(--space-7);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
   text-align: center;
 }
 
 .lead-form-title {
-  font-size: var(--font-size-xl);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: #ffffff;
   margin-bottom: var(--space-2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .lead-form-subtitle {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-8);
+  font-size: 0.85rem;
+  color: #f1f5f9;
+  margin-bottom: var(--space-6);
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .lead-form-fields {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
 }
 
-.lead-submit-btn {
+.lead-pill-input {
   width: 100%;
-  padding: 1rem;
-  font-size: var(--font-size-sm);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  background-color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 9999px;
+  padding: 0.8rem 1.4rem;
+  font-size: 0.875rem;
+  color: #1e293b;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.lead-pill-input::placeholder {
+  color: #64748b;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+}
+
+.lead-pill-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.lead-pill-input.is-invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+}
+
+.lead-pill-btn {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.75rem 2.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.lead-pill-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .form-success-message {
   display: none;
-  background-color: rgba(16, 185, 129, 0.1);
-  border: 1px solid var(--color-success);
-  color: #a7f3d0;
-  padding: var(--space-6);
+  background-color: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  color: #ffffff;
+  padding: var(--space-4) var(--space-6);
   border-radius: var(--radius-md);
-  margin-top: var(--space-6);
+  margin-top: var(--space-4);
   text-align: center;
+  backdrop-filter: blur(8px);
 }
 
 .form-success-message.is-visible {
   display: block;
 }
 
-.form-success-title {
-  font-size: var(--font-size-base);
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: var(--space-1);
+@media (max-width: 640px) {
+  .section-lead-form {
+    padding-top: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+  .lead-form-glass-card {
+    padding: var(--space-6) var(--space-4);
+    margin: 0 var(--space-2);
+  }
+  .lead-pill-input {
+    padding: 0.75rem 1.2rem;
+    font-size: 0.8125rem;
+  }
 }
-
-.form-success-desc {
-  font-size: var(--font-size-sm);
-  color: #d1fae5;
-}
-
